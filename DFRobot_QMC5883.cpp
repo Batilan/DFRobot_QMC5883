@@ -440,7 +440,7 @@ uint8_t DFRobot_QMC5883::readRegister8(uint8_t reg)
 
     Wire.beginTransmission(HMC5883L_ADDRESS);
     Wire.requestFrom(HMC5883L_ADDRESS, 1);
-    while(!Wire.available()) {};
+    //while(!Wire.available()) {};
     #if ARDUINO >= 100
         value = Wire.read();
     #else
@@ -457,7 +457,7 @@ uint8_t DFRobot_QMC5883::readRegister8(uint8_t reg)
     Wire.endTransmission();
     Wire.beginTransmission(QMC5883_ADDRESS);
     Wire.requestFrom(QMC5883_ADDRESS, 1);
-    while(!Wire.available()) {};
+    //while(!Wire.available()) {};
     #if ARDUINO >= 100
         value = Wire.read();
     #else
@@ -481,7 +481,7 @@ int16_t DFRobot_QMC5883::readRegister16(uint8_t reg)
     Wire.endTransmission();
     Wire.beginTransmission(HMC5883L_ADDRESS);
     Wire.requestFrom(HMC5883L_ADDRESS, 2);
-    while(!Wire.available()) {};
+    //while(!Wire.available()) {};
     #if ARDUINO >= 100
         uint8_t vha = Wire.read();
         uint8_t vla = Wire.read();
@@ -501,7 +501,7 @@ int16_t DFRobot_QMC5883::readRegister16(uint8_t reg)
     Wire.endTransmission();
     Wire.beginTransmission(QMC5883_ADDRESS);
     Wire.requestFrom(QMC5883_ADDRESS, 2);
-    while(!Wire.available()) {};
+    //while(!Wire.available()) {};
     #if ARDUINO >= 100
         uint8_t vha = Wire.read();
         uint8_t vla = Wire.read();
